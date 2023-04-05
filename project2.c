@@ -67,14 +67,10 @@ void initializeSemaphores(void){
         perror("Failed to create semaphore");
         exit(1);
     }
-    if (semctl(mixerID, 0, SETVAL, 1) < 0){
+    if (semctl(mixerID, 0, SETVAL, 2) < 0){
         perror("Failed to control resource");
         exit(1);
     }
-    mixer.sem_num = 0;
-    mixer.sem_op = 2;
-    mixer.sem_flg = 0;
-    semop(mixerID, &mixer, 1);
 
     pantryID = semget(IPC_PRIVATE, 1, S_IWUSR);
     if (pantryID < 0)
@@ -86,10 +82,6 @@ void initializeSemaphores(void){
         perror("Failed to control resource");
         exit(1);
     }
-    pantry.sem_num = 0;
-    pantry.sem_op = 1;
-    pantry.sem_flg = 0;
-    semop(pantryID, &pantry, 1);
 
     fridgeID = semget(IPC_PRIVATE, 1, S_IWUSR);
     if (fridgeID < 0)
@@ -97,14 +89,10 @@ void initializeSemaphores(void){
         perror("Failed to create semaphore");
         exit(1);
     }
-    if (semctl(fridgeID, 0, SETVAL, 1) < 0){
+    if (semctl(fridgeID, 0, SETVAL, 2) < 0){
         perror("Failed to control resource");
         exit(1);
     }
-    fridge.sem_num = 0;
-    fridge.sem_op = 2;
-    fridge.sem_flg = 0;
-    semop(fridgeID, &fridge, 1);
 
     bowlID = semget(IPC_PRIVATE, 1, S_IWUSR);
     if (bowlID < 0)
@@ -112,14 +100,10 @@ void initializeSemaphores(void){
         perror("Failed to create semaphore");
         exit(1);
     }
-    if (semctl(bowlID, 0, SETVAL, 1) < 0){
+    if (semctl(bowlID, 0, SETVAL, 3) < 0){
         perror("Failed to control resource");
         exit(1);
     }
-    bowl.sem_num = 0;
-    bowl.sem_op = 3;
-    bowl.sem_flg = 0;
-    semop(bowlID, &bowl, 1);
 
     spoonID = semget(IPC_PRIVATE, 1, S_IWUSR);
     if (spoonID < 0)
@@ -127,14 +111,10 @@ void initializeSemaphores(void){
         perror("Failed to create semaphore");
         exit(1);
     }
-    if (semctl(spoonID, 0, SETVAL, 1) < 0){
+    if (semctl(spoonID, 0, SETVAL, 5) < 0){
         perror("Failed to control resource");
         exit(1);
     }
-    spoon.sem_num = 0;
-    spoon.sem_op = 5;
-    spoon.sem_flg = 0;
-    semop(spoonID, &spoon, 1);
 
     ovenID = semget(IPC_PRIVATE, 1, S_IWUSR);
     if (ovenID < 0)
@@ -146,8 +126,4 @@ void initializeSemaphores(void){
         perror("Failed to control resource");
         exit(1);
     }
-    oven.sem_num = 0;
-    oven.sem_op = 1;
-    oven.sem_flg = 0;
-    semop(ovenID, &oven, 1); 
 }
