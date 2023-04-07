@@ -65,6 +65,8 @@ int assignNextRecipe(recipe* list);
 void initializeSemaphores(void);
 void getIngredientsFromFridge(int baker, recipe* rlist, recipeNames name);
 void getIngredientsFromPantry(int bakerID, recipe* rlist, recipeNames name);
+void mixIngredients(int bakerId, recipe* r);
+void bakeRecipe(int bakerId, recipe* r);
 void recipeInit(void);
 
 
@@ -72,7 +74,6 @@ recipe recipeList[NUMRECIPES];
 
 int main()
 {
-    pthread_t thread;
     char userString[MAX_STR_SIZE];
     char* endPtr;
     int numBakers = -1;
@@ -84,10 +85,14 @@ int main()
         numBakers = getUserBakers(userString);
     }while(numBakers == -1);
 
-    for(int i =0; i <= numBakers; i++)
+    pthread_t threads[numBakers];
+    for(int i =0; i < numBakers; i++)
     {
-        pthread_create(&thread, NULL, baker, (void*) &i);
-        pthread_detach(thread);
+        pthread_create(&threads[i], NULL, baker, (void*) &i);
+    }
+    for(int i =0; i < numBakers; i++)
+    {
+        pthread_join(threads[i], NULL);
     }
     return 0;
 }
@@ -110,7 +115,7 @@ void* baker(void* args)
     int bakerId = 0;
     memcpy(&bakerId, (int*)args, sizeof(int));
     int recipeIndex = bakerId % NUMRECIPES;
-    
+
     recipe* bakersRecipeList = malloc(sizeof(recipeList));
     if(bakersRecipeList < 0){
         perror("Could not allocate memory to copy over recipe list");
@@ -126,13 +131,14 @@ void* baker(void* args)
             getIngredientsFromPantry(bakerId, bakersRecipeList, intToRecipeNames(recipeIndex));
         }
         // grab bowl, mixer, spoon
-
+        mixIngredients(bakerId, &bakersRecipeList[recipeIndex]);
         // put in the oven
-
+        bakeRecipe(bakerId, &bakersRecipeList[recipeIndex]);
         // mark as done and update index
         recipeIndex = assignNextRecipe(bakersRecipeList);
     }
-    
+    printf("leaving thread!\n");
+    free(bakersRecipeList);
     pthread_exit((void*) 0);
 }
 
@@ -203,7 +209,8 @@ void getIngredientsFromPantry(int bakerID, recipe* rlist, recipeNames name)
 
 //this function will grab a mixer, then a bowl, then a spoon. The only limiting resource is the mixer so if a mixer is available, 
 //then everything else should be avialable.
-void mixIngredients(int bakerId, recipe r){
+void mixIngredients(int bakerId, recipe* r)
+{
     //baker trys to grab the mixer
     printf("Baker %d is waiting for a mixer\n", bakerId);
     mixer.sem_op = WAIT;
@@ -232,10 +239,11 @@ void mixIngredients(int bakerId, recipe r){
     spoon.sem_op = SIGNAL;
      printf("Baker %d has returned the spoon\n", bakerId);
     semop(spoonID, &spoon, 1);
-    r.isMixed = true; 
+    r->isMixed = true;
 }
 
-void bakeRecipe(int bakerId, recipe r){
+void bakeRecipe(int bakerId, recipe* r)
+{
     //baker is waiting for the oven
     printf("Baker %d is waiting for the sole, overworked oven\n", bakerId);
     oven.sem_op = WAIT;
@@ -243,7 +251,7 @@ void bakeRecipe(int bakerId, recipe r){
     printf("Baker %d has grabbed the sole, overworked, tired oven and started baking!\n", bakerId);
     sleep(3);
     printf("Baker %d has finished cooking the recipe!", bakerId);
-    r.isBaked = true;
+    r->isBaked = true;
     oven.sem_op = SIGNAL;
     semop(ovenID, &oven, 1);
 }
