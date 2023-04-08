@@ -34,8 +34,6 @@ typedef enum ingredients{
     BUTTER
 } ingredients;
 
-//we could create structures that contain ingredients for each recipe
-
 struct sembuf mixer;
 struct sembuf pantry;
 struct sembuf fridge;
@@ -139,7 +137,9 @@ void* baker(void* args)
         // mark as done and update index
         recipeIndex = assignNextRecipe(bakersRecipeList);
     }
-    printf("Baker %d is all done!\n", bakerId);
+    printf("-=+=-=+=-=+-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-\n");
+    printf("Baker %d has finished all the recipes!\n", bakerId);
+    printf("-=+=-=+=-=+-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-\n");
     free(bakersRecipeList);
     pthread_exit((void*) 0);
 }
@@ -194,30 +194,61 @@ int assignNextRecipe(recipe* list)
     return -1;
 }
 
-
-void getIngredientsFromFridge(int baker, recipe* rlist, recipeNames name)
+char* ingredientNamesToString(ingredients ingreds)
 {
+    switch(ingreds)
+    {
+        case FLOUR:
+            return "Flour";
+        case SUGAR:
+            return "Sugar";
+        case YEAST:
+            return "Yeast";
+        case BAKINGSODA:
+            return "Baking Soda";
+        case SALT:
+            return "Salt";
+        case CINNAMON:
+            return "Cinnamon";
+        case EGGS:
+            return "Eggs";
+        case MILK:
+            return "Milk";
+        case BUTTER:
+            return "Butter";
+        default:
+            return "IDK THIS INGREDIENT";
+    }
+}
+
+
+void getIngredientsFromFridge(int bakerID, recipe* rlist, recipeNames name)
+{
+    printf("Baker %d is waiting to open the fridge\n", bakerID);
     fridge.sem_op = WAIT;
     semop(fridgeID, &fridge, 1);
-    printf("Baker %d has opened the fridge and is grabbing ingredients  for recipe %s from the fridge NOM NOM NOM.\n", baker, recipeNamesToString(name));
+    printf("Baker %d has opened the fridge and is grabbing ingredients for %s from the fridge NOM NOM NOM.\n", bakerID, recipeNamesToString(name));
     for (int i = 0; i < rlist[name].numIngredients; i++){
         if (isInFridge(rlist[name].recipeIngredients[i])){
+            printf("Baker %d grabbed the %s from the fridge for %s\n", bakerID, ingredientNamesToString(rlist[name].recipeIngredients[i]), recipeNamesToString(name));
             rlist[name].currentIngredients[i] = true;
         }
     }
     sleep(2);
-    printf("Baker %d finished getting ingredients for %s from the fridge!\n", baker, recipeNamesToString(name));
+    printf("Baker %d finished getting ingredients for %s from the fridge!\n", bakerID, recipeNamesToString(name));
     fridge.sem_op = SIGNAL;
     semop(fridgeID, &fridge, 1);
 }
 
 void getIngredientsFromPantry(int bakerID, recipe* rlist, recipeNames name)
 {
+    printf("Baker %d is waiting to enter the pantry\n", bakerID);
     pantry.sem_op = WAIT;
     semop(pantryID, &pantry, 1);
     printf("Baker %d has opened the pantry and is grabbing ingredients for %s from the pantry.\n", bakerID, recipeNamesToString(name));
     for (int i = 0; i < rlist[name].numIngredients; i++){
         if (isInPantry(rlist[name].recipeIngredients[i])){
+            printf("Baker %d grabbed the %s from the pantry for %s\n", bakerID, ingredientNamesToString(rlist[name].recipeIngredients[i]), recipeNamesToString(name));
             rlist[name].currentIngredients[i] = true;
         }
     }
@@ -243,11 +274,11 @@ void mixIngredients(int bakerId, recipe* r, recipeNames name)
     sleep(1);
     spoon.sem_op = WAIT;
     semop(spoonID, &spoon, 1);
-    printf("Baker %d has grabbed a bowl for  %s\n", bakerId, recipeNamesToString(name));
+    printf("Baker %d has grabbed a spoon for  %s\n", bakerId, recipeNamesToString(name));
     sleep(1);
-    printf("Baker %d is mixing the ingredients together for %s! MIX MIX MIX\n", bakerId, recipeNamesToString(name));
+    printf("Baker %d is mixing the ingredients together for %s! MIX MIX MIX MIX MIX!\n", bakerId, recipeNamesToString(name));
     sleep(2);
-    printf("Baker %d has finished mixing their ingredients for %s !\n", bakerId, recipeNamesToString(name));
+    printf("Baker %d has finished mixing their ingredients for %s!\n", bakerId, recipeNamesToString(name));
 
     //free the semaphores, starting with the mixer
     mixer.sem_op = SIGNAL;
@@ -270,7 +301,7 @@ void bakeRecipe(int bakerId, recipe* r, recipeNames name)
     semop(ovenID, &oven, 1);
     printf("Baker %d has grabbed the sole, overworked, tired oven and started baking %s!\n", bakerId, recipeNamesToString(name));
     sleep(3);
-    printf("Baker %d has finished cooking %s!\n", bakerId, recipeNamesToString(name));
+    printf("Baker %d has finished cooking %s and the sole, dreary oven is ready for another beating\n", bakerId, recipeNamesToString(name));
     r->isBaked = true;
     oven.sem_op = SIGNAL;
     semop(ovenID, &oven, 1);
@@ -300,7 +331,7 @@ bool isBakerDone(recipe* bakersRecipeList)
 
 bool isInFridge(ingredients ingredient)
 {
-    return ingredient == EGGS || ingredient == BUTTER || ingredient == BUTTER;
+    return ingredient == EGGS || ingredient == BUTTER || ingredient == MILK;
 }
 
 bool isInPantry(ingredients ingredient)
