@@ -1,0 +1,256 @@
+Script started on 2023-04-09 13:14:22-07:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="183" LINES="45"]
+]0;ericspidle@ubuntu: ~/gvsu/winter2023/452-cis/bakeOff[01;32mericspidle@ubuntu[00m:[01;34m~/gvsu/winter2023/452-cis/bakeOff[00m$ ./project2 
+******* The Great Bake Off ***********
+Please enter the number of bakers for the bake off: 3
+baker id is 1
+baker id is 2
+Baker 2 is waiting to open the fridge
+Baker 1 is waiting to open the fridge
+Baker 1 has opened the fridge and is grabbing ingredients for PANCAKES from the fridge NOM NOM NOM.
+Baker 1 grabbed the Milk from the fridge for PANCAKES
+Baker 1 grabbed the Butter from the fridge for PANCAKES
+Baker 1 grabbed the Eggs from the fridge for PANCAKES
+Baker 2 has opened the fridge and is grabbing ingredients for PIZZA from the fridge NOM NOM NOM.
+baker id is 3
+Baker 3 is waiting to open the fridge
+Baker 2 finished getting ingredients for PIZZA from the fridge!
+Baker 1 finished getting ingredients for PANCAKES from the fridge!
+Baker 1 is waiting to enter the pantry
+Baker 1 has opened the pantry and is grabbing ingredients for PANCAKES from the pantry.
+Baker 2 is waiting to enter the pantry
+Baker 3 has opened the fridge and is grabbing ingredients for PRETZELS from the fridge NOM NOM NOM.
+Baker 3 grabbed the Eggs from the fridge for PRETZELS
+Baker 1 grabbed the Flour from the pantry for PANCAKES
+Baker 1 grabbed the Sugar from the pantry for PANCAKES
+Baker 1 grabbed the Baking Soda from the pantry for PANCAKES
+Baker 1 grabbed the Salt from the pantry for PANCAKES
+Baker 3 finished getting ingredients for PRETZELS from the fridge!
+Baker 3 is waiting to enter the pantry
+Baker 1 finished getting ingredients for PANCAKES from the pantry!
+Baker 1 is waiting for a mixer
+Baker 1 has grabbed a mixer to start mixing ingredients for PANCAKES
+Baker 2 has opened the pantry and is grabbing ingredients for PIZZA from the pantry.
+Baker 2 grabbed the Yeast from the pantry for PIZZA
+Baker 2 grabbed the Sugar from the pantry for PIZZA
+Baker 2 grabbed the Salt from the pantry for PIZZA
+Baker 1 has grabbed a bowl for PANCAKES
+Baker 1 has grabbed a spoon for  PANCAKES
+Baker 2 finished getting ingredients for PIZZA from the pantry!
+Baker 2 is waiting for a mixer
+Baker 2 has grabbed a mixer to start mixing ingredients for PIZZA
+Baker 3 has opened the pantry and is grabbing ingredients for PRETZELS from the pantry.
+Baker 3 grabbed the Flour from the pantry for PRETZELS
+Baker 3 grabbed the Sugar from the pantry for PRETZELS
+Baker 3 grabbed the Salt from the pantry for PRETZELS
+Baker 3 grabbed the Yeast from the pantry for PRETZELS
+Baker 3 grabbed the Baking Soda from the pantry for PRETZELS
+Baker 1 is mixing the ingredients together for PANCAKES! MIX MIX MIX MIX MIX!
+Baker 2 has grabbed a bowl for PIZZA
+Baker 1 has finished mixing their ingredients for PANCAKES!
+Baker 1 has returned the mixer
+Baker 1 has returned the bowl
+Baker 1 has returned the spoon
+Baker 1 is waiting for the sole, overworked oven
+Baker 1 has grabbed the sole, overworked, tired oven and started baking PANCAKES!
+Baker 2 has grabbed a spoon for  PIZZA
+Baker 3 finished getting ingredients for PRETZELS from the pantry!
+Baker 3 is waiting for a mixer
+Baker 3 has grabbed a mixer to start mixing ingredients for PRETZELS
+Baker 2 is mixing the ingredients together for PIZZA! MIX MIX MIX MIX MIX!
+Baker 3 has grabbed a bowl for PRETZELS
+Baker 1 has finished cooking PANCAKES and the sole, dreary oven is ready for another beating
+Baker 1 is waiting to open the fridge
+Baker 1 has opened the fridge and is grabbing ingredients for COOKIES from the fridge NOM NOM NOM.
+Baker 1 grabbed the Milk from the fridge for COOKIES
+Baker 1 grabbed the Butter from the fridge for COOKIES
+Baker 3 has grabbed a spoon for  PRETZELS
+Baker 2 has finished mixing their ingredients for PIZZA!
+Baker 2 has returned the mixer
+Baker 2 has returned the bowl
+Baker 2 has returned the spoon
+Baker 2 is waiting for the sole, overworked oven
+Baker 2 has grabbed the sole, overworked, tired oven and started baking PIZZA!
+Baker 3 is mixing the ingredients together for PRETZELS! MIX MIX MIX MIX MIX!
+Baker 1 finished getting ingredients for COOKIES from the fridge!
+Baker 1 is waiting to enter the pantry
+Baker 1 has opened the pantry and is grabbing ingredients for COOKIES from the pantry.
+Baker 1 grabbed the Flour from the pantry for COOKIES
+Baker 1 grabbed the Sugar from the pantry for COOKIES
+Baker 2 has finished cooking PIZZA and the sole, dreary oven is ready for another beating
+Baker 2 is waiting for a mixer
+Baker 2 has grabbed a mixer to start mixing ingredients for COOKIES
+Baker 3 has finished mixing their ingredients for PRETZELS!
+Baker 3 has returned the mixer
+Baker 3 has returned the bowl
+Baker 3 has returned the spoon
+Baker 3 is waiting for the sole, overworked oven
+Baker 3 has grabbed the sole, overworked, tired oven and started baking PRETZELS!
+Baker 2 has grabbed a bowl for COOKIES
+Baker 1 finished getting ingredients for COOKIES from the pantry!
+Baker 1 is waiting for a mixer
+Baker 1 has grabbed a mixer to start mixing ingredients for COOKIES
+Baker 2 has grabbed a spoon for  COOKIES
+Baker 1 has grabbed a bowl for COOKIES
+Baker 3 has finished cooking PRETZELS and the sole, dreary oven is ready for another beating
+Baker 3 is waiting for a mixer
+Baker 2 is mixing the ingredients together for COOKIES! MIX MIX MIX MIX MIX!
+Baker 1 has grabbed a spoon for  COOKIES
+Baker 1 is mixing the ingredients together for COOKIES! MIX MIX MIX MIX MIX!
+Baker 2 has finished mixing their ingredients for COOKIES!
+Baker 2 has returned the mixer
+Baker 2 has returned the bowl
+Baker 2 has returned the spoon
+Baker 2 is waiting for the sole, overworked oven
+Baker 2 has grabbed the sole, overworked, tired oven and started baking COOKIES!
+Baker 3 has grabbed a mixer to start mixing ingredients for COOKIES
+Baker 3 has grabbed a bowl for COOKIES
+Baker 1 has finished mixing their ingredients for COOKIES!
+Baker 1 has returned the mixer
+Baker 1 has returned the bowl
+Baker 1 has returned the spoon
+Baker 1 is waiting for the sole, overworked oven
+Baker 3 has grabbed a spoon for  COOKIES
+Baker 2 has finished cooking COOKIES and the sole, dreary oven is ready for another beating
+Baker 2 is waiting for a mixer
+Baker 2 has grabbed a mixer to start mixing ingredients for PANCAKES
+Baker 1 has grabbed the sole, overworked, tired oven and started baking COOKIES!
+Baker 3 is mixing the ingredients together for COOKIES! MIX MIX MIX MIX MIX!
+Baker 2 has grabbed a bowl for PANCAKES
+Baker 2 has grabbed a spoon for  PANCAKES
+Baker 3 has finished mixing their ingredients for COOKIES!
+Baker 3 has returned the mixer
+Baker 3 has returned the bowl
+Baker 3 has returned the spoon
+Baker 3 is waiting for the sole, overworked oven
+Baker 1 has finished cooking COOKIES and the sole, dreary oven is ready for another beating
+Baker 1 is waiting for a mixer
+Baker 1 has grabbed a mixer to start mixing ingredients for PIZZA
+Baker 3 has grabbed the sole, overworked, tired oven and started baking COOKIES!
+Baker 2 is mixing the ingredients together for PANCAKES! MIX MIX MIX MIX MIX!
+Baker 1 has grabbed a bowl for PIZZA
+Baker 1 has grabbed a spoon for  PIZZA
+Baker 2 has finished mixing their ingredients for PANCAKES!
+Baker 2 has returned the mixer
+Baker 2 has returned the bowl
+Baker 2 has returned the spoon
+Baker 2 is waiting for the sole, overworked oven
+Baker 3 has finished cooking COOKIES and the sole, dreary oven is ready for another beating
+Baker 3 is waiting for a mixer
+Baker 3 has grabbed a mixer to start mixing ingredients for PANCAKES
+Baker 2 has grabbed the sole, overworked, tired oven and started baking PANCAKES!
+Baker 1 is mixing the ingredients together for PIZZA! MIX MIX MIX MIX MIX!
+Baker 3 has grabbed a bowl for PANCAKES
+Baker 1 has finished mixing their ingredients for PIZZA!
+Baker 1 has returned the mixer
+Baker 1 has returned the bowl
+Baker 1 has returned the spoon
+Baker 1 is waiting for the sole, overworked oven
+Baker 3 has grabbed a spoon for  PANCAKES
+Baker 2 has finished cooking PANCAKES and the sole, dreary oven is ready for another beating
+Baker 2 is waiting for a mixer
+Baker 2 has grabbed a mixer to start mixing ingredients for PRETZELS
+Baker 1 has grabbed the sole, overworked, tired oven and started baking PIZZA!
+Baker 3 is mixing the ingredients together for PANCAKES! MIX MIX MIX MIX MIX!
+Baker 2 has grabbed a bowl for PRETZELS
+Baker 2 has grabbed a spoon for  PRETZELS
+Baker 3 has finished mixing their ingredients for PANCAKES!
+Baker 3 has returned the mixer
+Baker 3 has returned the bowl
+Baker 3 has returned the spoon
+Baker 3 is waiting for the sole, overworked oven
+Baker 1 has finished cooking PIZZA and the sole, dreary oven is ready for another beating
+Baker 1 is waiting for a mixer
+Baker 1 has grabbed a mixer to start mixing ingredients for PRETZELS
+Baker 3 has grabbed the sole, overworked, tired oven and started baking PANCAKES!
+Baker 2 is mixing the ingredients together for PRETZELS! MIX MIX MIX MIX MIX!
+Baker 1 has grabbed a bowl for PRETZELS
+Baker 2 has finished mixing their ingredients for PRETZELS!
+Baker 2 has returned the mixer
+Baker 2 has returned the bowl
+Baker 2 has returned the spoon
+Baker 2 is waiting for the sole, overworked oven
+Baker 1 has grabbed a spoon for  PRETZELS
+Baker 3 has finished cooking PANCAKES and the sole, dreary oven is ready for another beating
+Baker 3 is waiting for a mixer
+Baker 3 has grabbed a mixer to start mixing ingredients for PIZZA
+Baker 2 has grabbed the sole, overworked, tired oven and started baking PRETZELS!
+Baker 1 is mixing the ingredients together for PRETZELS! MIX MIX MIX MIX MIX!
+Baker 3 has grabbed a bowl for PIZZA
+Baker 3 has grabbed a spoon for  PIZZA
+Baker 1 has finished mixing their ingredients for PRETZELS!
+Baker 1 has returned the mixer
+Baker 1 has returned the bowl
+Baker 1 has returned the spoon
+Baker 1 is waiting for the sole, overworked oven
+Baker 2 has finished cooking PRETZELS and the sole, dreary oven is ready for another beating
+Baker 2 is waiting to open the fridge
+Baker 2 has opened the fridge and is grabbing ingredients for CINNAMON ROLLS from the fridge NOM NOM NOM.
+Baker 2 grabbed the Butter from the fridge for CINNAMON ROLLS
+Baker 2 grabbed the Eggs from the fridge for CINNAMON ROLLS
+Baker 1 has grabbed the sole, overworked, tired oven and started baking PRETZELS!
+Baker 3 is mixing the ingredients together for PIZZA! MIX MIX MIX MIX MIX!
+Baker 2 finished getting ingredients for CINNAMON ROLLS from the fridge!
+Baker 2 is waiting to enter the pantry
+Baker 2 has opened the pantry and is grabbing ingredients for CINNAMON ROLLS from the pantry.
+Baker 2 grabbed the Flour from the pantry for CINNAMON ROLLS
+Baker 2 grabbed the Sugar from the pantry for CINNAMON ROLLS
+Baker 2 grabbed the Salt from the pantry for CINNAMON ROLLS
+Baker 2 grabbed the Cinnamon from the pantry for CINNAMON ROLLS
+Baker 3 has finished mixing their ingredients for PIZZA!
+Baker 3 has returned the mixer
+Baker 3 has returned the bowl
+Baker 3 has returned the spoon
+Baker 3 is waiting for the sole, overworked oven
+Baker 1 has finished cooking PRETZELS and the sole, dreary oven is ready for another beating
+Baker 1 is waiting for a mixer
+Baker 1 has grabbed a mixer to start mixing ingredients for CINNAMON ROLLS
+Baker 3 has grabbed the sole, overworked, tired oven and started baking PIZZA!
+Baker 1 has grabbed a bowl for CINNAMON ROLLS
+Baker 2 finished getting ingredients for CINNAMON ROLLS from the pantry!
+Baker 2 is waiting for a mixer
+Baker 2 has grabbed a mixer to start mixing ingredients for CINNAMON ROLLS
+Baker 1 has grabbed a spoon for  CINNAMON ROLLS
+Baker 3 has finished cooking PIZZA and the sole, dreary oven is ready for another beating
+Baker 3 is waiting for a mixer
+Baker 2 has grabbed a bowl for CINNAMON ROLLS
+Baker 1 is mixing the ingredients together for CINNAMON ROLLS! MIX MIX MIX MIX MIX!
+Baker 2 has grabbed a spoon for  CINNAMON ROLLS
+Baker 1 has finished mixing their ingredients for CINNAMON ROLLS!
+Baker 1 has returned the mixer
+Baker 2 is mixing the ingredients together for CINNAMON ROLLS! MIX MIX MIX MIX MIX!
+Baker 1 has returned the bowl
+Baker 1 has returned the spoon
+Baker 1 is waiting for the sole, overworked oven
+Baker 1 has grabbed the sole, overworked, tired oven and started baking CINNAMON ROLLS!
+Baker 3 has grabbed a mixer to start mixing ingredients for CINNAMON ROLLS
+Baker 3 has grabbed a bowl for CINNAMON ROLLS
+Baker 2 has finished mixing their ingredients for CINNAMON ROLLS!
+Baker 2 has returned the mixer
+Baker 2 has returned the bowl
+Baker 2 has returned the spoon
+Baker 2 is waiting for the sole, overworked oven
+Baker 3 has grabbed a spoon for  CINNAMON ROLLS
+Baker 1 has finished cooking CINNAMON ROLLS and the sole, dreary oven is ready for another beating
+-=+=-=+=-=+-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-
+Baker 1 has finished all the recipes!
+-=+=-=+=-=+-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-
+Baker 2 has grabbed the sole, overworked, tired oven and started baking CINNAMON ROLLS!
+Baker 3 is mixing the ingredients together for CINNAMON ROLLS! MIX MIX MIX MIX MIX!
+Baker 3 has finished mixing their ingredients for CINNAMON ROLLS!
+Baker 3 has returned the mixer
+Baker 3 has returned the bowl
+Baker 3 has returned the spoon
+Baker 3 is waiting for the sole, overworked oven
+Baker 2 has finished cooking CINNAMON ROLLS and the sole, dreary oven is ready for another beating
+-=+=-=+=-=+-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-
+Baker 2 has finished all the recipes!
+-=+=-=+=-=+-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-
+Baker 3 has grabbed the sole, overworked, tired oven and started baking CINNAMON ROLLS!
+Baker 3 has finished cooking CINNAMON ROLLS and the sole, dreary oven is ready for another beating
+-=+=-=+=-=+-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-
+Baker 3 has finished all the recipes!
+-=+=-=+=-=+-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-
+]0;ericspidle@ubuntu: ~/gvsu/winter2023/452-cis/bakeOff[01;32mericspidle@ubuntu[00m:[01;34m~/gvsu/winter2023/452-cis/bakeOff[00m$ exit
+exit
+
+Script done on 2023-04-09 13:16:01-07:00 [COMMAND_EXIT_CODE="0"]
