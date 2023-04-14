@@ -67,6 +67,7 @@ void mixIngredients(int bakerId, recipe* r, recipeNames name);
 void bakeRecipe(int bakerId, recipe* r, recipeNames name);
 void recipeInit(void);
 char* recipeNamesToString(recipeNames recName);
+void freeRecipes(void);
 
 
 recipe recipeList[NUMRECIPES];
@@ -93,6 +94,7 @@ int main()
     {
         pthread_join(threads[i], NULL);
     }
+    freeRecipes();
     return 0;
 }
 
@@ -343,6 +345,15 @@ void initIngredients(recipe* rlist, recipeNames name){
     }
     rlist[name].isMixed = false;
     rlist[name].isBaked = false;
+}
+
+void freeRecipes(void)
+{
+    for(int i = 0; i < NUMRECIPES; i++)
+    {
+        free(recipeList[i].currentIngredients);
+        free(recipeList[i].recipeIngredients);
+    }
 }
 
 void recipeInit(void){
