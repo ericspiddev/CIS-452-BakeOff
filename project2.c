@@ -112,8 +112,6 @@ int getUserBakers(char* str)
 void* baker(void* args)
 {
     int bakerId = args + 1;
-    // memcpy(&bakerId, (int*)args, sizeof(int));
-    printf("baker id is %d\n", bakerId);
     int recipeIndex = bakerId % NUMRECIPES;
 
     recipe* bakersRecipeList = malloc(sizeof(recipeList));
